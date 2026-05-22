@@ -15,7 +15,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // 2. MIDDLEWARES (Deben ir antes de las rutas)
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:4200', // Permite que tu Angular local se conecte
+    credentials: true
+}));
 app.use(express.json()); // Esto permite que el servidor entienda el JSON que envías desde Thunder Client
 app.use(morgan('dev'));
 
