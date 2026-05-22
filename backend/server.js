@@ -40,7 +40,7 @@ mongoose.connect(process.env.MONGO_URI)
 // 4. RUTAS
 // Aquí conectamos el prefijo /api/usuarios con tu archivo de rutas
 app.use('/api/usuarios', userRoutes);
-
+app.use('/api/encuestas', userRoutes);
 // Ruta base para probar en el navegador
 app.get('/', (req, res) => {
     res.send('Servidor de Ronald corriendo en el puerto 4000');
